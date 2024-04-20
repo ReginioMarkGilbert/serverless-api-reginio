@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
         const authors = await authorModel.find();
         res.json(authors);
     } catch (err) {
-        res.status(500).json({message: err.message});;
+        res.status(500).json({message: err.message});
     }
 });
 

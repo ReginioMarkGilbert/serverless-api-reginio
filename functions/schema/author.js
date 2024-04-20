@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const authorSchema = new Schema({
+const authorScema = new Schema({
     name: {
         type: String,
         required: true,
@@ -14,7 +14,7 @@ const authorSchema = new Schema({
     password: String
 });
 
-authorSchema.pre('save', function(next){
+authorScema.pre('save', function(next){
     const username = this.name.toLowerCase().replace(/\s/g, '');
     const password = `${this.name}${this.age}`;
     this.username = username;
@@ -22,4 +22,4 @@ authorSchema.pre('save', function(next){
     next();
 });
 
-module.exports = authorSchema;
+module.exports = authorScema;
